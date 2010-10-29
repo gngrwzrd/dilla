@@ -343,8 +343,7 @@ class Command(BaseCommand):
 		salt=""
 		field_extras=kwargs.get("field_extras",False)
 		field = kwargs.get("field", ())
-		if field.choices:
-                        return random.choice(field.choices)[0]
+		if field.choices:return random.choice(field.choices)[0]
 		if kwargs.get('unique',False): salt="".join([random.choice(string.digits) for i in range(random.randint(1,16))])
 		word_count=self._get_field_option(field_extras,'word_count',-1)
 		word_range=self._get_field_option(field_extras,'word_range',-1)
